@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Response = () => {
+const Response = ({info}) => {
+
+    console.log(info)
+
     return (
         <h4>I'm the response</h4>
     )
