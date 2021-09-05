@@ -1,11 +1,18 @@
 import React from 'react'
 
-const TransactionsList = ({info}) => {
+const TransactionsList = ({info, onTransactionSelected}) => {
 
-    console.log(info);
+    const handleChange = function(event) {
+        console.log(event)
+    }
+
+    // console.log(info);
     const resultArray = info.result
 
-    console.log(resultArray);
+    // console.log(resultArray);
+    
+
+    
 
     const transactionOptions = resultArray.map((result, index) => {
         return <option value={index} key = {index}>{result.hash}</option>
@@ -13,7 +20,7 @@ const TransactionsList = ({info}) => {
 
     return (
         
-        <select defaultValue="">
+        <select defaultValue="" onChange={handleChange}>
             <option value="" selected>Choose a Transaction</option>
             {transactionOptions}
         </select>
